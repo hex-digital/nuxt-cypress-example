@@ -2,6 +2,15 @@
 
 > My ace Nuxt.js project
 
+## Cypress
+
+Example tests are found in `~/cypress/integration`
+
+- Install dependencies: `yarn`
+- Start local server: `yarn dev` or `yarn build && yarn start`
+- Start cypress: `yarn cypress open`
+- Run tests
+
 ## Build Setup
 
 ``` bash
