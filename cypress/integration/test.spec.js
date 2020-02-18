@@ -1,5 +1,5 @@
 describe('Test feature', () => {
-  it('can tell the user is logged out on page load', () => {
+  it('can tell the user is logged out on index page', () => {
     cy.visit('/')
       .window()
       .debug()
