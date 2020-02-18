@@ -11,7 +11,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.8.5",
     "nuxt": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cypress": "^4.0.2"
+  }
 }
