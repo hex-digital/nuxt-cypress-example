@@ -1,0 +1,41 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.13.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn lint
+      - run: yarn test --maxWorkers=2
+
+workflows:
+  version: 2.1
+  build-test-and-approval-deploy:
+    jobs:
+      - build
+      - cypress/install:
+          yarn: true
+          build: 'yarn build'  # run a custom app build step
+      - cypress/run:
+          executor: cypress/browsers-chrome69
+          browser: chrome
+          yarn: true
+          requires:
+            - cypress/install
+          record: true
+          parallel: true      # split all specs across machines
+          parallelism: 2      # use 4 CircleCI machines to finish quickly
+          group: 'all tests'  # name this group "all tests" on the dashboard
+          start: 'yarn start'  # start server before running tests
