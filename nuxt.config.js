@@ -28,6 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins.cypress.js', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules
