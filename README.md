@@ -11,6 +11,8 @@ Example tests are found in `~/cypress/integration`
 - Start cypress: `yarn cypress open`
 - Run tests
 
+!
+
 ## Build Setup
 
 ``` bash
