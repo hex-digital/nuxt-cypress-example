@@ -11,7 +11,13 @@ Example tests are found in `~/cypress/integration`
 - Start cypress: `yarn cypress open`
 - Run tests
 
-!
+## Test Examples
+
+- [Login](https://github.com/hex-digital/nuxt-cypress-example/blob/master/cypress/integration/login.spec.js)
+  - Test user is currently logged out (Nuxt auth store has loggedIn equals false
+  - Log the user in using Nuxt auth, then test they are logged in (Nuxt auth store has loggedIn equals true)
+
+![Video of Cypress logging in](https://user-images.githubusercontent.com/2754728/74766109-ab34ad80-527c-11ea-983e-f9d28ee76df3.gif)
 
 ## Build Setup
 
