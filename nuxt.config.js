@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -39,15 +38,15 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
     '@nuxtjs/auth',
   ],
   auth: {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/login', method: 'post', propertyName: 'data.token.accessToken' },
-          user: { url: '/auth/user', method: 'get', propertyName: 'data.user' },
-          logout: { url: '/auth/logout', method: 'get' },
+          login: { url: 'http://www.mocky.io/v2/5e4c2671310000c998d8bd24', method: 'post', propertyName: 'token' },
+          user: { url: 'http://www.mocky.io/v2/5e4c25c5310000e2cad8bd1e', method: 'get', propertyName: '' },
         },
       },
     },
