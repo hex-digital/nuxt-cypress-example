@@ -1,6 +1,6 @@
-# example-nuxt-cypress-window
+# example-nuxt-cypress
 
-> My ace Nuxt.js project
+A Nuxt.js and Cypress starter kit. Examples include testing pages, store state, auth and more.
 
 ## Cypress
 
